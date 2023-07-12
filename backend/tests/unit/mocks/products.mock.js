@@ -37,6 +37,20 @@ const productByIdServiceError = {
   status: 'NOT_FOUND', data: { message: 'Product not found' },
 };
 
+const productIdFromDB = { insertId: 4 };
+
+const productIdFromModel = 4;
+
+const newProductByIdFromModel = {
+  id: 4,
+  name: 'Monitor',
+};
+
+const productFromServiceCreated = {
+  status: 'CREATED',
+  data: newProductByIdFromModel,
+};
+
 module.exports = { 
   allProducts,
   productById,
@@ -44,4 +58,8 @@ module.exports = {
   productByIdService,
   allProductsServiceError,
   productByIdServiceError,
+  productIdFromDB,
+  productIdFromModel,
+  newProductByIdFromModel,
+  productFromServiceCreated,
 };

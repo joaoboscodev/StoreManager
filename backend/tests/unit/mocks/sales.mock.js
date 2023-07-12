@@ -34,7 +34,23 @@ const salesByIdFromDb = [
   },
 ];
 
+const salesByIdFromServiceNotFound = {
+  status: 'NOT_FOUND', data: { message: 'Sale not found' },
+};
+
+const allSalesFromServiceNotFound = {
+  status: 'NOT_FOUND', data: { message: 'There are no sales' },
+};
+
+const allSalesFromService = { status: 'SUCCESSFUL', data: allSalesFromDb };
+
+const salesByIdFromService = { status: 'SUCCESSFUL', data: salesByIdFromDb };
+
 module.exports = {
   allSalesFromDb,
   salesByIdFromDb,
-};
+  salesByIdFromServiceNotFound,
+  allSalesFromServiceNotFound,
+  allSalesFromService,
+  salesByIdFromService,
+}; 

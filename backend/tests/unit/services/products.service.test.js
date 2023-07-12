@@ -37,5 +37,12 @@ describe('Testes para Products Service', function () {
 
     expect(responseService.data).to.be.deep.equal({ message: 'Product not found' });
   });
+
+  it('should return a error when there are no products', async function () {
+    sinon.stub(productsModel, 'findAll').resolves(undefined);
+
+    const responseService = await productsService.findAll();
+    expect(responseService).to.be.an('object');
+  });
   afterEach(function () { return sinon.restore(); });
 });
